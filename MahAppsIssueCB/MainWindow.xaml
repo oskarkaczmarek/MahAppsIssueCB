@@ -1,0 +1,26 @@
+﻿<mah:MetroWindow x:Class="MahAppsIssueCB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MahAppsIssueCB"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" >
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel VerticalAlignment="Center" Grid.Column="1">
+            <StackPanel.Resources>
+                <Thickness x:Key="ItemMargin">10 0 10 10</Thickness>
+            </StackPanel.Resources>
+            <TextBox Margin="{StaticResource ItemMargin}" x:Name="tbTextNotIssued" mah:TextBoxHelper.Watermark="Watermark" Text="none" mah:TextBoxHelper.UseFloatingWatermark="True" IsEnabled="False" ></TextBox>
+            <ComboBox Margin="{StaticResource ItemMargin}" x:Name="cbIssuedOne" mah:TextBoxHelper.Watermark="Watermark" mah:TextBoxHelper.UseFloatingWatermark="True" IsEditable="False" ItemsSource="{Binding SomeCollection}" SelectedValuePath="Item1" DisplayMemberPath="Item2"/>
+            
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>
